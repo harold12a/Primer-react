@@ -1,16 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import NavBar from './componentes/NavBar';
+
+
 
 function App() {
     return ( 
     <div className = "App" >
+        <NavBar/>
+        <h1>nuestra tienda virtual cuenta con una gran variedad de articulos que tenemos disponibles para ustedes </h1>
 
-        <p className='titulo'> boutique ak  </p>
         
-
        </div>
     );
 }
 
 export default App;
+
+
