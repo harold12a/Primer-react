@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function Cart({numero}) {
+function CartWidget({numero}) {
     return ( 
     <div >
         <ion-icon name="cart-outline"></ion-icon>
@@ -10,5 +10,5 @@ function Cart({numero}) {
     );
 }
 
-export default Cart;
+export default CartWidget;
 

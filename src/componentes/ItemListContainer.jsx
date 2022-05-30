@@ -3,8 +3,8 @@ import React from 'react';
 
 
 
-function Item({texto}) {
+function ItemListContainer({texto}) {
     return <div>{texto}</div> ;
 }
 
-export default Item;
+export default ItemListContainer;
