@@ -17,7 +17,7 @@ import CartWidget from './CartWidget';
 const pages = ['Articulos', 'nosotros', 'lo mas vendido'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
-const MuiNavBar = () => {
+const NavBar = () => {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -134,4 +134,4 @@ const MuiNavBar = () => {
     </AppBar>
   );
 };
-export default MuiNavBar;
+export default NavBar;
