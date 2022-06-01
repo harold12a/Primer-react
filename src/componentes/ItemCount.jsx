@@ -1,56 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
 import IconButton from '@mui/material/IconButton';
 import Button from '@mui/material/Button';
 import DeleteIcon from '@mui/icons-material/Delete';
-import { Icon } from '@mui/material';
 
 
 
+function ItemCount({initial,stock,onAdd}) {
+  const[count,setCount] = useState ((initial));
+  const decrease = () => {
+    setCount(count - 1);
+  }
+  const increase = () => {
+    setCount(count + 1);
+  }
 
 
-function ItemCount({stock,initial}) {
-    
+  useEffect(() => {
+    console.log('render')
+    if(count ==1){
+      alert('has agregado 1 unidad  ');
+      }else if(count==2){
+        alert('has agregado 2 unidad  ');
+      }else if(count==3){
+        alert('has agregado 3 unidad  ');
+      }else if (count==4){
+        alert('has agregado 4 unidad  ');
+      }else{
+        alert('has agregado el maximo stock disponible 5 unidades');
+      }
+  });
 
 
-    const[x,setX] = useState (initial);
+  
+  
+return ( 
 
-    console.log('render');
-
-
-
-    return ( 
-    <div >
-        <Icon>home</Icon>
+     <div className= 'counter'>
         
-        STOCK:{x}
-        <br/>
-        <Button onClick={()=>{
-             x< stock ? setX(x+1):setX(x);
-            
-            }}
+         <Button disabled={count <=1 } onClick={decrease}
            variant="outlined" color="secondary" aria-label="add to shopping cart" startIcon={<IconButton />}  >
-            Agregar al 
+            -
         <AddShoppingCartIcon /> 
-      </Button>
         
-       
+      </Button>
+      <span>{count}</span>
 
-        <Button onClick={()=>{
-            
-            x> initial ? setX(x-1):setX(x);
-            
-            
-        }}
+       <Button disabled={count >= stock } onClick={increase}
         variant="outlined" color="secondary" endIcon={<DeleteIcon />}>
-        Eliminar
-      </Button>
-        
-        
-         </div>
-        
-        
-    );
+        +
+        </Button>
+        <div>
+          <button disabled={stock <= 0} onClick ={()=> onAdd(count)}>agregar al carrito</button>
+        </div>
+
+        </div>
+
+        );
 }
 
 export default ItemCount;
+
+

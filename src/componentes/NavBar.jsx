@@ -14,6 +14,7 @@ import MenuItem from '@mui/material/MenuItem';
 import AdbIcon from '@mui/icons-material/Adb';
 import CartWidget from './CartWidget';
 
+
 const pages = ['Articulos', 'nosotros', 'lo mas vendido'];
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
@@ -127,7 +128,7 @@ const NavBar = () => {
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>
-          <CartWidget numero={5}/>
+            <CartWidget numero={5}/>
           </Box>
         </Toolbar>
       </Container>
