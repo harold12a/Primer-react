@@ -1,8 +1,8 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
 
-const Item = ({resultado})=>{
-    const {image,title,description,price}=resultado
+const Item = ({producto})=>{
+    const {image,title,description,price}=producto
     
 
   return (
@@ -13,12 +13,11 @@ const Item = ({resultado})=>{
     <Card.Title>{title}</Card.Title>
     <Card.Text>
       {description}
-     
-    </Card.Text>
-    <Card.Text>
+     </Card.Text>
+    <Card.Text className='text'>
     $ {price}
     </Card.Text>
-    <Button variant="primary">ver detalles</Button>
+    <Button  className='btn btn-dark' variant="primary">ver detalles</Button>
   </Card.Body>
 </Card>
     

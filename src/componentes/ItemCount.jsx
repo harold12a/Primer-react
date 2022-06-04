@@ -58,7 +58,7 @@ function ItemCount({ initial, stock, onAdd }) {
 <br />
 
 
-  <Button disabled={stock <= 0} onClick ={()=> onAdd(count)}>agregar al carrito</Button>
+  <Button  disabled={stock <= 0} onClick ={()=> onAdd(count)}>agregar al carrito</Button>
    
 </> 
 

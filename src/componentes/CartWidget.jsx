@@ -6,6 +6,7 @@ function CartWidget({numero}) {
     return ( 
     <div >
         <AddShoppingCartIcon />
+        
         {numero}
          </div>
         
