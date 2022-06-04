@@ -1,19 +1,13 @@
 import React from 'react';
-import imagenes from '../assets/imagenes';
+import Item from './Item';
 
-
-const ItemList = (props) => {
+const ItemList = ({resultado}) => {
   return (
         <div>
-         {/* <img src={imagenes.img1}  width={100}/>*/}
-
-         <p>img: {props.url}</p> 
-        <p>codigo : {props.id}</p>
-        <p>description: {props.description}</p>
-        <p>price: {props.price}</p>
-        
+         {resultado?.map(resultado=><Item id ={resultado.id} description={resultado.description} price={resultado.price} img={resultado.image} title={resultado.title} />)}
+       
         </div>
-    
+     
   )
 }
 

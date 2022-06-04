@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart'
-import IconButton from '@mui/material/IconButton';
-import Button from '@mui/material/Button';
-import DeleteIcon from '@mui/icons-material/Delete';
+import {Button} from 'react-bootstrap';
+
+
 
 
 
@@ -38,31 +37,34 @@ function ItemCount({ initial, stock, onAdd }) {
 
 
 
+              
 
   return (
 
     <>
-      <Button disabled={count <= 1} onClick={decrease}
-        variant="outlined" color="secondary" aria-label="add to shopping cart" startIcon={<IconButton />}  >
-        -
-        <AddShoppingCartIcon />
-       </Button>
+    <Button className="btn btn-danger btn-sm" disabled={count <= 1} onClick={decrease}>
+                    -
+                </Button>
+     
 
 <span>{count}</span>
 
-<Button disabled={count >= stock } onClick={increase}
- variant="outlined" color="secondary" endIcon={<DeleteIcon />}>
- +
- </Button>
+<Button className="btn btn-info btn-sm" disabled={count >= stock } onClick={increase}>
+                    +
+                </Button>
+
+
 
 <br />
+
 
   <Button disabled={stock <= 0} onClick ={()=> onAdd(count)}>agregar al carrito</Button>
    
 </> 
 
  );
-}
+};
+
 
 export default ItemCount;
 
