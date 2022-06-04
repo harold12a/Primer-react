@@ -11,7 +11,7 @@ import CartWidget from './CartWidget';
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
-        <Nav.Link href="#home" color="red">articulos</Nav.Link>
+        <Nav.Link href="#home" >articulos</Nav.Link>
         <Nav.Link href="#link">lo mas vendido</Nav.Link>
         <Nav.Link href="#link">nosotros</Nav.Link>
         

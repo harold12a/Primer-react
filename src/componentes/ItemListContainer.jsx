@@ -14,7 +14,7 @@ function ItemListContainer() {
             setTimeout(()=>{
                 res([
                     
-                    {id:'1', title:'#0001', description:'locion ', price:70000,  image:(imagenes.img1) },
+                    {id:'1', title:'boss', description:'locion men  ', price:70000,  image:(imagenes.img1) },
                     {id:'2', title:'cosa', description:'color azul impermeable ', price:150,image:(imagenes.img2)},
                     {id:'3', title:'cosa', description:'color azul impermeable ', price:150,image:(imagenes.img3) },
                     {id:'4', title:'cosa', description:'color azul impermeable ', price:150,image:(imagenes.img4) },
