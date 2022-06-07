@@ -1,31 +1,28 @@
 import React from 'react'
-import { Button, Card } from 'react-bootstrap';
 
 
 
-const ItemDetail = ({todos})=>{
-    const {domain_name,category_name,domain_id}=todos
-    
-
+const ItemDetail = ({characters}) => {
   return (
+    <div className='row'>
+      {characters.map((item,index)=>(
+          <div key={index} className='col mb-5'>
+            <div className='card'>
+              <img src={item.image} alt=''/>
+              <div className='card-body'>
+                <h5 className='card-title'>{item.name}</h5>
+                <hr/>
+                <p>$150</p>
+                <p>stock 50 unidades</p>
+                <p>location: {item.location.name}</p>
 
-        <Card className='Card' >
-  <Card.Img variant="top"  />
+              </div>
+           </div>
+          </div>
+))}
+     
+     </div>
+  );
+};
 
-  <Card.Body>
-    <Card.Title>{domain_id}</Card.Title>
-    <Card.Text>
-      {domain_name}
-     </Card.Text>
-    <Card.Text className='text'>
-    $ 150000
-     {category_name} 
-    </Card.Text>
-    <Button  className='btn btn-dark' variant="primary">ver detalles</Button>
-  </Card.Body>
-</Card>
-    
-  )
-}
-
-export default ItemDetail;
+export default ItemDetail; 
