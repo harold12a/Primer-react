@@ -34,8 +34,8 @@ function ItemListContainer() {
             
          })
          .catch((error)=>{
-            seterror(true);
-            setLoanding(error);
+            seterror(error);
+            
          })
          .finally(()=>{
              setLoanding(false);

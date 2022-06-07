@@ -2,13 +2,6 @@ import React, { useState, useEffect } from 'react';
 import {Button} from 'react-bootstrap';
 
 
-
-
-
-
-
-
-
 function ItemCount({ initial, stock, onAdd }) {
   
   const [count, setCount] = useState((initial));
