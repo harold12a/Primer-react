@@ -2,7 +2,7 @@ import React,{useEffect, useState} from 'react';
 import ItemDetail from './ItemDetail';
 
 function ItemDetailCOntainer() {
-    const[character,setCharacter]=useState({}); /* lo cambie a character porque hace referencia a un solo personaje */
+    const[character,setCharacter]=useState({}); 
     const initialUrl ="https://rickandmortyapi.com/api/character";
    
     const fetchCharacters = (url)=>{
@@ -20,7 +20,7 @@ function ItemDetailCOntainer() {
 
     return ( 
        <div className='container mt-5'>
-            { (character.id ?? null) ? <ItemDetail character={character}/> : ''} {/* comprueba que llegue el objeto para luego renderizar */}
+            { (character.id ?? null) ? <ItemDetail character={character}/> : ''}
        </div>
     );
 }
