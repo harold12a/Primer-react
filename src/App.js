@@ -23,9 +23,10 @@ function App() {
       
       
     <NavBar/>
-    {/*<ItemListContainer/>
-    {/*<ItemCount initial={1} stock ={5} onAdd={onAdd}/>*/}
+    {/*<ItemListContainer/>*/}
+    
      <ItemDetailCOntainer/>
+     <ItemCount initial={1} stock ={5} onAdd={onAdd}/>
        
        
        </div>

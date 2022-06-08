@@ -1,4 +1,30 @@
+
 import React from 'react'
+
+const ItemDetail = ({character}) => {
+    return (
+      <div className='row'>
+            <div className='col mb-5'>
+              <div className='card' width='50' >
+                <img src={character.image} alt=''/>
+                <div className='card-body'>
+                  <h5 className='card-title'>{character.name}</h5>
+                  <hr/>
+                  <p>$150</p>
+                  <p>stock 50 unidades</p>
+                  <p>location: {character.location.name}</p>
+                </div>
+             </div>
+            </div>
+       
+       </div>
+    );
+};
+
+export default ItemDetail;
+
+
+{/*import React from 'react'
 
 
 
@@ -10,7 +36,7 @@ const ItemDetail = ({characters}) => {
             <div className='card'>
               <img src={item.image} alt=''/>
               <div className='card-body'>
-                <h5 className='card-title'>{item.name}</h5>
+                <h5 className='card-title' >{item.name}</h5>
                 <hr/>
                 <p>$150</p>
                 <p>stock 50 unidades</p>
@@ -25,4 +51,4 @@ const ItemDetail = ({characters}) => {
   );
 };
 
-export default ItemDetail; 
+export default ItemDetail;*/} 
