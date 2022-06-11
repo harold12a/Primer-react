@@ -1,11 +1,10 @@
+import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import './App.css';
-import ItemCount from './componentes/ItemCount';
+import ItemDetailCOntainer from './componentes/ItemDetailCOntainer';
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import ItemDetailCOntainer from './componentes/ItemDetailCOntainer';
-
 
 
 
@@ -19,17 +18,27 @@ function App() {
   
   
     return ( 
-    <div className = "App" >
+      <BrowserRouter>
+      <NavBar/>
+      <Routes>
+
+       {/*mostrar todos los productos*/}
+      <Route path='/' element={<ItemListContainer/>} ></Route>
+
+      {/*todos los productos de una categoria segundo el id DADO */}
+      <Route path='/category/:id' element={<ItemListContainer/>} ></Route>
       
-      
-    <NavBar/>
-    {/*<ItemListContainer/>*/}
-    
-     <ItemDetailCOntainer/>
-     <ItemCount initial={1} stock ={5} onAdd={onAdd}/>
+      {/*un producto puntual segun el ID dado */}
+      <Route path='/item/:id' element={<ItemDetailCOntainer/>}>  </Route>
+
+
+
        
+
+          
+      </Routes>
+      </BrowserRouter>
        
-       </div>
     );
 }
 

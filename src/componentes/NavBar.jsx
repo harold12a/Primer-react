@@ -1,25 +1,27 @@
 import React from 'react';
-import {Navbar,Nav,Container} from 'react-bootstrap'
+import {Navbar,Nav} from 'react-bootstrap'
 import CartWidget from './CartWidget';
+import {Link} from "react-router-dom"; 
 
- const NavBar = () => {
+const NavBar = () => {
   return (
 <div>
-<Navbar bg="primary" expand="lg">
-  <Container>
-    <Navbar.Brand href="#home" >BOUTIQUE AK</Navbar.Brand>
-    <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Link className='navLink' href="#home" >articulos</Nav.Link>
-        <Nav.Link className='navLink' href="#link">lo mas vendido</Nav.Link>
-        <Nav.Link className='navLink' href="#link">nosotros</Nav.Link>
+<Nav  className='navbar navbar-dark bg-warning'>
+  <div className='container'>
+    <Navbar.Brand to="/" >BOUTIQUE AK</Navbar.Brand>
+    
         
-      </Nav>
-      <CartWidget numero={5}/>
-    </Navbar.Collapse>
-  </Container>
-</Navbar>
+        <Link to="/" className='btn btn-outline-primary'>inicio</Link>
+        <Link to="/category/articulos"  className='btn btn-outline-primary'>articulos</Link>
+        <Link to="/category/bolsos"  className='btn btn-outline-primary'>bolsos</Link>
+        <Link to="/category/lociones"  className='btn btn-outline-primary'>lociones</Link>
+        <Link to="/category/contacto"  className='btn btn-outline-primary'>contacto</Link>
+        
+        <CartWidget numero={5}/>
+        
+        </div>
+
+</Nav>
 
     </div>
   )

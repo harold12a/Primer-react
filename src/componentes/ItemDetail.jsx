@@ -2,24 +2,19 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
 
-const ItemDetail = ({character}) => {
+const ItemDetail = ({producto}) => {
     return (
 
-
       <Card className='Card' >
-      <Card.Img variant="top" src={character.image} />
+      <Card.Img variant="top" src={producto.image} />
       <Card.Body>
-        <Card.Title>{character.name}</Card.Title>
+        <Card.Title>{producto.title}</Card.Title>
         <Card.Text>
-        $150
+          {producto.description}
          </Card.Text>
         <Card.Text className='text'>
-       
-        
-        location: {character.location.name}
-        
+        $ {producto.price}
         </Card.Text>
-        stock 50 unidades
         <Button  className='btn btn-dark' variant="primary">ver detalles</Button>
       </Card.Body>
     </Card>
