@@ -33,7 +33,7 @@ function App() {
 
 
 
-       
+       {/*<ItemCount initial={1} stcok={5} onAdd={onAdd}  */}
 
           
       </Routes>

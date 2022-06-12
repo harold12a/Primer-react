@@ -1,7 +1,7 @@
 import React,{useEffect, useState} from 'react';
+import ItemDetail from './ItemDetail';
 import imagenes from '../assets/imagenes';
 import {useParams} from 'react-router-dom';
-import ItemDetail from './ItemDetail';
 
 let productosMock=[ 
     {category:"lociones", id:'1', title:'boss',  description:'cantidad 100ml',  price:60000,  image:(imagenes.img1) },
@@ -33,15 +33,12 @@ function ItemDetailCOntainer() {
     const[loading,setLoanding]=useState(true);
     const[error,seterror]=useState(false);
     const[producto,setproducto]=useState([]);
+    
     useEffect(() => {
-        setproducto([]);
-        setLoanding(true);
-        seterror(error); 
      const articulos = new Promise((res,)=>{
             setTimeout(()=>{
-       
-
-         (!id) ?  res (productosMock) : res(productosMock.find(item=>item.id===id))  
+                
+         (!id) ?  res (productosMock) : res(producto?.find(ItemDetail=>ItemDetail.category===id))  
      },2000);
             
         });
@@ -58,19 +55,24 @@ function ItemDetailCOntainer() {
          .finally(()=>{
              setLoanding(false);
          });
-    },[id]);
+    }, [id]);
     
-    
-    return ( 
-<>
-<div > {loading && 'loding..'}</div>
+   
+ return ( 
+        <>
+    <div > {loading && 'loding..'}</div>
     <div > {error && 'hubo error en el pago'}</div>
 
-       <div className='container mt-5'>
-            { (producto.id ?? null) ? <ItemDetail producto={producto}/> : ''}
-       </div>
-       </>
-    );
-}
-   
+    <div className='container mt-5'>
+ <ItemDetail producto={producto} />
+ </div>
+    
+    </>
+)
+    
+        
+};
 export default ItemDetailCOntainer;
+
+
+

@@ -3,22 +3,23 @@ import React from 'react'
 import { Button, Card } from 'react-bootstrap';
 
 const ItemDetail = ({producto}) => {
+  const {image,title,description,price}=producto
     return (
 
+    
       <Card className='Card' >
-      <Card.Img variant="top" src={producto.image} />
+      <Card.Img variant="top" src={image} />
       <Card.Body>
-        <Card.Title>{producto.title}</Card.Title>
+        <Card.Title>{title}</Card.Title>
         <Card.Text>
-          {producto.description}
+          {description}
          </Card.Text>
         <Card.Text className='text'>
-        $ {producto.price}
+        $ {price}
         </Card.Text>
         <Button  className='btn btn-dark' variant="primary">ver detalles</Button>
       </Card.Body>
     </Card>
-      
          
 
 
@@ -26,4 +27,8 @@ const ItemDetail = ({producto}) => {
 };
 
 export default ItemDetail;
+
+
+
+
 
