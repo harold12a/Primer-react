@@ -10,7 +10,8 @@ const NavBar = () => {
   <div className='container'>
     <Navbar.Brand to="/" >BOUTIQUE AK</Navbar.Brand>
     
-        
+      
+
         <Link to="/" className='btn btn-outline-primary'>inicio</Link>
         <Link to="/category/articulos"  className='btn btn-outline-primary'>articulos</Link>
         <Link to="/category/bolsos"  className='btn btn-outline-primary'>bolsos</Link>

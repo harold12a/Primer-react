@@ -29,48 +29,38 @@ let productosMock=[
 function ItemDetailCOntainer() {
 
     const{id}= useParams();
-     console.log(id);
     const[loading,setLoanding]=useState(true);
     const[error,seterror]=useState(false);
     const[producto,setproducto]=useState([]);
-    
+    console.log(id);
+
     useEffect(() => {
-     const articulos = new Promise((res,)=>{
+        setproducto([]);
+        setLoanding(true);
+        seterror(false); 
+
+     const proms = new Promise((res,)=>{
             setTimeout(()=>{
-                
-         (!id) ?  res (productosMock) : res(producto?.find(ItemDetail=>ItemDetail.category===id))  
+                res(productosMock[+id +1 ]); 
      },2000);
             
         });
        
-       articulos
-        .then((result)=>{
-            setproducto(result);
-            
-         })
-         .catch((error)=>{
-            seterror(error);
-            
-         })
-         .finally(()=>{
-             setLoanding(false);
-         });
+       proms
+        .then((result)=>{setproducto(result);})
+        .catch((error)=>{seterror(error);})
+        .finally(()=>{setLoanding(false);
+});
     }, [id]);
     
    
  return ( 
         <>
-    <div > {loading && 'loding..'}</div>
-    <div > {error && 'hubo error en el pago'}</div>
-
-    <div className='container mt-5'>
- <ItemDetail producto={producto} />
- </div>
-    
-    </>
+    <div > {loading && 'loading..'}</div>
+    <div > {error && 'loading error'}</div>
+    <ItemDetail producto={producto} />
+       </>
 )
-    
-        
 };
 export default ItemDetailCOntainer;
 

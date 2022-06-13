@@ -37,16 +37,14 @@ function ItemListContainer() {
         setproducto([]);
         setLoanding(true);
         seterror(error); 
-     const articulos = new Promise((res,)=>{
+     const proms = new Promise((res,)=>{
             setTimeout(()=>{
-       
-
-         (!id) ?  res (productosMock) : res(productosMock.filter(item=>item.category===id))  
+        (!id) ?  res (productosMock) : res(productosMock.filter(item=>item.category===id))  
      },2000);
             
         });
        
-       articulos
+       proms
         .then((result)=>{
             setproducto(result);
             

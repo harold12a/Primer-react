@@ -1,9 +1,10 @@
-import React from 'react'
-import { Button, Card } from 'react-bootstrap';
+import React from 'react';
+import { Button, Card} from 'react-bootstrap';
+import { NavLink } from 'react-router-dom';
 
 const Item = ({producto})=>{
     const {image,title,description,price}=producto
-    
+   
 
   return (
 
@@ -17,7 +18,15 @@ const Item = ({producto})=>{
     <Card.Text className='text'>
     $ {price}
     </Card.Text>
-    <Button  className='btn btn-dark' variant="primary">ver detalles</Button>
+    <div className='button'>
+    
+    <NavLink to={`/item/${producto.id}`}>
+
+        <Button className='buttoncontainer'>detalles</Button>
+
+     </NavLink>
+    
+    </div>
   </Card.Body>
 </Card>
     
@@ -25,3 +34,4 @@ const Item = ({producto})=>{
 }
 
 export default Item;
+

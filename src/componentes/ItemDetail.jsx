@@ -2,11 +2,11 @@
 import React from 'react'
 import { Button, Card } from 'react-bootstrap';
 
-const ItemDetail = ({producto}) => {
+function ItemDetail ({producto}) {
   const {image,title,description,price}=producto
-    return (
 
-    
+    return (
+      <>
       <Card className='Card' >
       <Card.Img variant="top" src={image} />
       <Card.Body>
@@ -20,10 +20,9 @@ const ItemDetail = ({producto}) => {
         <Button  className='btn btn-dark' variant="primary">ver detalles</Button>
       </Card.Body>
     </Card>
-         
+    </>
 
-
-    );
+    )
 };
 
 export default ItemDetail;

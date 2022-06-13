@@ -22,20 +22,12 @@ function App() {
       <NavBar/>
       <Routes>
 
-       {/*mostrar todos los productos*/}
       <Route path='/' element={<ItemListContainer/>} ></Route>
 
-      {/*todos los productos de una categoria segundo el id DADO */}
       <Route path='/category/:id' element={<ItemListContainer/>} ></Route>
+
+      <Route path='/item/:id' element={<ItemDetailCOntainer/>}>  </Route> 
       
-      {/*un producto puntual segun el ID dado */}
-      <Route path='/item/:id' element={<ItemDetailCOntainer/>}>  </Route>
-
-
-
-       {/*<ItemCount initial={1} stcok={5} onAdd={onAdd}  */}
-
-          
       </Routes>
       </BrowserRouter>
        
@@ -43,5 +35,5 @@ function App() {
 }
 
 export default App;
-
+    {/*<ItemCount initial={1} stcok={5} onAdd={onAdd}  */}
 
