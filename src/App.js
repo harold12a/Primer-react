@@ -11,12 +11,7 @@ import NavBar from './componentes/NavBar';
 
 function App() {
 
-  const onAdd =(quantity)=>{
-    alert(`compraste en boutiqueak  ${quantity} uniades`);
-   // console.log(`compraste${quantity}uniades`);
-  }
-  
-  
+ 
     return ( 
       <BrowserRouter>
       <NavBar/>
@@ -35,5 +30,5 @@ function App() {
 }
 
 export default App;
-    {/*<ItemCount initial={1} stcok={5} onAdd={onAdd}  */}
+
 
