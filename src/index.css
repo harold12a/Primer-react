@@ -1,9 +1,13 @@
 body {
   margin: 0;
-  padding: 0;
-  background-color: greenyellow;
-  
+  padding: 10px;
+ 
+   
 }
+
+/*body{
+   background-image: url(./assets/img/background.jpg);
+}*/
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -19,20 +23,31 @@ code {
  
 }
 
-.Card{
-  display: block;
-  width: 15rem;
-  margin: auto;
-  height: auto;
-  border-radius: 5px;
-  padding: auto;
-  
-}
-
-
 .text{
   color: red;
  }
+
+ .CardImg {
+  width:230px ;
+  height:280px ;
+  border-radius: 30px;
+} 
+
+
+.Card {
+  width: 15rem;
+  height: auto;
+  margin: auto;
+  transition: all 400ms ease;
+  background: transparent ; 
+  border-radius: 20px;
+  border-color: aliceblue;
+  font-size: .8rem ;
+  display: flex;
+  flex-direction: column;    
+  justify-content: center;
+  
+}
 
 
 

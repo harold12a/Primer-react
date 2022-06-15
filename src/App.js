@@ -5,28 +5,36 @@ import './App.css';
 import ItemDetailCOntainer from './componentes/ItemDetailCOntainer';
 import ItemListContainer from './componentes/ItemListContainer';
 import NavBar from './componentes/NavBar';
+import Cart from './componentes/Cart';
 
 
 
 
 function App() {
 
- 
-    return ( 
-      <BrowserRouter>
-      <NavBar/>
-      <Routes>
 
-      <Route path='/' element={<ItemListContainer/>} ></Route>
+  return (
+    <>
+      <div className='App'  >
 
-      <Route path='/category/:id' element={<ItemListContainer/>} ></Route>
+        <BrowserRouter >
+          <NavBar />
+          <Routes>
+            {/*} <Route path='/testeventos' element={<TestEventos />} ></Route>*/}
 
-      <Route path='/item/:id' element={<ItemDetailCOntainer/>}>  </Route> 
-      
-      </Routes>
-      </BrowserRouter>
-       
-    );
+            <Route path='/' element={<ItemListContainer />} ></Route>
+
+            <Route path='/category/:id' element={<ItemListContainer />} ></Route>
+
+            <Route path='/item/:id' element={<ItemDetailCOntainer />}>  </Route>
+            <Route path='/cart' element={<Cart />}>  </Route>
+
+
+          </Routes>
+        </BrowserRouter>
+      </div>
+    </>
+  );
 }
 
 export default App;
