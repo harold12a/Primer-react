@@ -3,14 +3,13 @@ import { Button, Card } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "./CartContext";
 
 function ItemDetail({ producto }) {
   const [add, setadd] = useState(false);
 
-  const onAdd = () => {
-    setadd(!add);
-  };
-
+const {addItem} = useContext(CartContext)
   const { image, title, description, price } = producto;
 
   return (
@@ -28,15 +27,15 @@ function ItemDetail({ producto }) {
             vel harum.
           </p>
           {add ? (
-            <></>
+            <Link to="/cart" className="btn btn-dark" variant="primary">
+               finalizar compra
+            </Link>
           ) : (
             <Button className="btn btn-dark" variant="primary">
-              <ItemCount initial={1} stock={5} onAdd={onAdd} />
+              <ItemCount producto={producto} initial={1} stock={5} onAdd={addItem} />
             </Button>
           )}
-          <Link to="/cart" className="btn btn-dark" variant="primary">
-            finalizar compra
-          </Link>
+         
         </Card.Body>
       </Card>
     </>

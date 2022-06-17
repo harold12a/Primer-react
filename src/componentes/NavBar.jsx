@@ -25,9 +25,13 @@ const NavBar = () => {
             </Link>
             <Link to="/category/contacto" className="btn btn-outline-primary">
               contacto
+            
             </Link>
+            <Link to="/cart" >
 
-            <CartWidget numero={5} />
+            <CartWidget />
+            </Link>
+          
           </div>
         </Nav>
       </div>

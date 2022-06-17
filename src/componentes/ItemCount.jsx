@@ -1,31 +1,31 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
 
-function ItemCount({ initial, stock, onAdd }) {
-  const [count, setCount] = useState(initial);
+function ItemCount({producto, initial, stock, onAdd }) {
+  const [qty, setqty] = useState(initial);
 
   const decrease = () => {
-    setCount(count - 1);
+    setqty(qty - 1);
   };
   const increase = () => {
-    setCount(count + 1);
+    setqty(qty + 1);
   };
 
   return (
     <>
       <Button
         className="btn btn-danger btn-sm"
-        disabled={count <= 1}
+        disabled={qty <= 1}
         onClick={decrease}
       >
         -
       </Button>
 
-      <span>{count}</span>
+      <span>{qty}</span>
 
       <Button
         className="btn btn-info btn-sm"
-        disabled={count >= stock}
+        disabled={qty >= stock}
         onClick={increase}
       >
         +
@@ -33,7 +33,7 @@ function ItemCount({ initial, stock, onAdd }) {
 
       <br />
 
-      <Button disabled={stock <= 0} onClick={() => onAdd()}>
+      <Button disabled={stock <= 0} onClick={() => onAdd(producto, qty)}>
         agregar al carrito
       </Button>
     </>
