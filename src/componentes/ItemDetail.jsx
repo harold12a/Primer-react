@@ -8,9 +8,9 @@ import { CartContext } from "./CartContext";
 
 function ItemDetail({ producto }) {
   const [add, setadd] = useState(false);
-
-const {addItem} = useContext(CartContext)
   const { image, title, description, price } = producto;
+
+  const {addItem} = useContext(CartContext)
 
   return (
     <>
@@ -30,7 +30,9 @@ const {addItem} = useContext(CartContext)
             <Link to="/cart" className="btn btn-dark" variant="primary">
                finalizar compra
             </Link>
-          ) : (
+          ) 
+          : 
+          (
             <Button className="btn btn-dark" variant="primary">
               <ItemCount producto={producto} initial={1} stock={5} onAdd={addItem} />
             </Button>
