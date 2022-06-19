@@ -7,10 +7,10 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 function ItemDetail({ producto }) {
-  const [add, setadd] = useState(false);
+
   const { image, title, description, price } = producto;
 
-  const {addItem} = useContext(CartContext)
+  const { addItem } = useContext(CartContext);
 
   return (
     <>
@@ -26,18 +26,16 @@ function ItemDetail({ producto }) {
             doloremque officia odio quod nobis, expedita inventore ea eligendi
             vel harum.
           </p>
-          {add ? (
-            <Link to="/cart" className="btn btn-dark" variant="primary">
-               finalizar compra
-            </Link>
-          ) 
-          : 
-          (
-            <Button className="btn btn-dark" variant="primary">
-              <ItemCount producto={producto} initial={1} stock={5} onAdd={addItem} />
-            </Button>
-          )}
-         
+
+          <Button className="btn btn-dark" variant="primary">
+            <ItemCount
+              producto={producto}
+              initial={1}
+              stock={5}
+              onAdd={addItem}
+            />
+          </Button>
+          
         </Card.Body>
       </Card>
     </>

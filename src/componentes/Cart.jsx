@@ -2,7 +2,7 @@ import React from "react";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 import { Button, Card } from "react-bootstrap";
-import { Link } from "react-router-dom";
+
 
 const Cart = () => {
   const { producto, removeItem, clearItems } = useContext(CartContext);

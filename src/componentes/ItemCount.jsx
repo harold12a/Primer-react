@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 
-function ItemCount({producto, initial, stock, onAdd }) {
+function ItemCount({ producto, initial, stock, onAdd }) {
   const [qty, setqty] = useState(initial);
+  const [add, setAdd]= useState(true);
 
   const decrease = () => {
     setqty(qty - 1);
@@ -11,7 +13,16 @@ function ItemCount({producto, initial, stock, onAdd }) {
     setqty(qty + 1);
   };
 
+  const go = () =>{
+    setAdd(add?false:true)
+  }
+  const Add = ()=> {
+    onAdd(producto,qty)
+  }
+
   return (
+    <>
+    {add? (
     <>
       <Button
         className="btn btn-danger btn-sm"
@@ -33,9 +44,22 @@ function ItemCount({producto, initial, stock, onAdd }) {
 
       <br />
 
-      <Button disabled={stock <= 0} onClick={() => onAdd(producto, qty)}>
+      <Button disabled={stock <= 0} onClick={() => {
+        go();
+        Add();
+      }}
+      >
         agregar al carrito
       </Button>
+      </>
+    )
+    :
+    (
+      <Link to="/cart" className="btn btn-dark" variant="primary" >
+        <Button>finalizar compra</Button>
+      </Link>
+
+    )}
     </>
   );
 }
