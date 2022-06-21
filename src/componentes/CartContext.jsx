@@ -25,10 +25,12 @@ export const CartProvider = ({ children }) => {
           ...producto,
           {
             id: item.id,
+            category: item.category,
             name: item.title,
             price: item.price,
             image: item.image,
             qty: qty,
+            description: item.description
           },
         ]);
   };
@@ -39,9 +41,13 @@ export const CartProvider = ({ children }) => {
   const clearItems = () => {
     setProducto([]);
   };
+  const totalPrice = ()=>{
+    return producto.reduce((prev,act)=> prev + act.qty * act.price, 0 );
+  }
+
 
   return (
-    <CartContext.Provider value={{ producto, addItem, removeItem, clearItems }}>
+    <CartContext.Provider value={{ producto, addItem, removeItem, clearItems, totalPrice }}>
       {children}
     </CartContext.Provider>
   );

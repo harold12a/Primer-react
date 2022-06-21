@@ -1,8 +1,7 @@
 import React from "react";
 import { Button, Card } from "react-bootstrap";
 import ItemCount from "./ItemCount";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
@@ -12,7 +11,7 @@ function ItemDetail({ producto }) {
 
   const { addItem } = useContext(CartContext);
 
-  return (
+ return (
     <>
       <Card className="Card">
         <Card.Img className="cardImg" variant="top" src={image} />
