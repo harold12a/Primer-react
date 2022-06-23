@@ -7,7 +7,7 @@ import { CartContext } from "./CartContext";
 
 function ItemDetail({ producto }) {
 
-  const { image, title, description, price } = producto;
+  const { id, image, title, description, price } = producto;
 
   const { addItem } = useContext(CartContext);
 
@@ -28,6 +28,7 @@ function ItemDetail({ producto }) {
 
           <Button className="btn btn-dark" variant="primary">
             <ItemCount
+              id={id}
               producto={producto}
               initial={1}
               stock={5}
