@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import { Button } from "react-bootstrap";
-import { Link } from "react-router-dom";
 
-function ItemCount({ producto, initial, stock, onAdd }) {
+export default function ItemCount ({initial, stock, onAdd}) {
   const [qty, setqty] = useState(initial);
-  const [add, setAdd]= useState(true);
+  
 
   const decrease = () => {
     setqty(qty - 1);
@@ -13,17 +12,9 @@ function ItemCount({ producto, initial, stock, onAdd }) {
     setqty(qty + 1);
   };
 
-  const go = () =>{
-    setAdd(add?false:true)
-  }
-  const Add = ()=> {
-    onAdd(producto,qty)
-  }
-
   return (
     <>
-    {add? (
-    <>
+    <div>
       <Button
         className="btn btn-danger btn-sm"
         disabled={qty <= 1}
@@ -31,9 +22,7 @@ function ItemCount({ producto, initial, stock, onAdd }) {
       >
         -
       </Button>
-
       <span>{qty}</span>
-
       <Button
         className="btn btn-info btn-sm"
         disabled={qty >= stock}
@@ -41,27 +30,16 @@ function ItemCount({ producto, initial, stock, onAdd }) {
       >
         +
       </Button>
-
       <br />
-
-      <Button disabled={stock <= 0} onClick={() => {
-        go();
-        Add();
-      }}
+      <Button disabled={stock <= 0} onClick={() => onAdd(qty)}
       >
         agregar al carrito
       </Button>
-      </>
-    )
-    :
-    (
-      <Link to="/cart" className="btn btn-dark" variant="primary" >
-        <Button>finalizar compra</Button>
-      </Link>
-
-    )}
+    </div>
+       
+      
     </>
-  );
+  
+  )
 }
 
-export default ItemCount;

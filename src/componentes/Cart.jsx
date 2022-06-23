@@ -2,30 +2,15 @@ import React from "react";
 import { useContext} from "react";
 import { CartContext } from "./CartContext";
 import { Button, Card,Table } from "react-bootstrap";
-import {Link} from "react-router-dom"
+
 
 
 
 const Cart = () => {
   const { producto, removeItem, clearItems, totalPrice} = useContext(CartContext);
  
-
-
-
-  if (producto.length === 0 ){{
-    return(
-      <>
-      <p>no hay productos en el carrito de compras</p>
-      <Link to="/" >hacer compras</Link>
-      </>
-    )
-  }}
-  
-
- 
   return (
     <>
-     
       <div className="map">
         {producto.map((item) => (
           <div key={item.id}>

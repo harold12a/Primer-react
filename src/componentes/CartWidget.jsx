@@ -3,17 +3,12 @@ import { useContext } from "react";
 import { CartContext } from "./CartContext";
 
 const CartWidget = () => {
-  const { producto } = useContext(CartContext);
-  let itemsInCart = 0;
-
-  producto.map((producto) => {
-    itemsInCart = itemsInCart + producto.qty;
-  })
+  const { getItemQuantity } = useContext(CartContext);
 
   return (
     <>
     <div>
-      {itemsInCart}
+      {getItemQuantity()}
       <ion-icon name="cart-outline"></ion-icon>
     </div>
     </>

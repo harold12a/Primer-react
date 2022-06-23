@@ -1,18 +1,24 @@
 import React from "react";
-import { Button, Card } from "react-bootstrap";
+import {  Card } from "react-bootstrap";
 import ItemCount from "./ItemCount";
-
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
+import { useState } from "react";
+import { Link } from "react-router-dom";
 
 function ItemDetail({ producto }) {
-
-  const { id, image, title, description, price } = producto;
-
+  const [cantidad, setCantidad] = useState(0);
+  const {  image, title, description, price } = producto;
   const { addItem } = useContext(CartContext);
 
- return (
+  function onAdd(quantity){
+    addItem(producto, quantity)
+    setCantidad(quantity);
+  }
+ 
+  return (
     <>
+      
       <Card className="Card">
         <Card.Img className="cardImg" variant="top" src={image} />
         <Card.Body>
@@ -26,15 +32,13 @@ function ItemDetail({ producto }) {
             vel harum.
           </p>
 
-          <Button className="btn btn-dark" variant="primary">
-            <ItemCount
-              id={id}
-              producto={producto}
+          
+          {cantidad > 0 ? <Link className="btn btn-danger" to={'/cart'}>Terminar mi compra</Link> : <ItemCount
               initial={1}
               stock={5}
-              onAdd={addItem}
+              onAdd={onAdd}
             />
-          </Button>
+            }
           
         </Card.Body>
       </Card>
@@ -43,3 +47,4 @@ function ItemDetail({ producto }) {
 }
 
 export default ItemDetail;
+

@@ -6,34 +6,18 @@ export const CartContext = createContext([]);
 export const CartProvider = ({ children }) => {
   const [producto, setProducto] = useState([]);
 
+  console.log(producto);
+
   const isInCart = (id) => {
     const found = producto.find((producto) => producto.id === id);
     return found;
   };
 
   const addItem = (item, qty) => {
-    
-    {/*isInCart(item.id)
-      ? setProducto(
-          producto.map((prod) => {
-            if (prod.id === producto.id) {
-              prod.qty += qty;
-            }
-            return prod;
-          })
-        )
-      : setProducto([
-          ...producto,
-          {
-            id: item.id,
-            category: item.category,
-            name: item.title,
-            price: item.price,
-            image: item.image,
-            qty: qty,
-            description: item.description
-          },
-        ]);*/}
+         const newProduct = {
+           ...item,
+           qty
+        }
         if(isInCart(item.id)){
           const found = producto.find(producto => producto.id === item.id);
           const productIndex = producto.indexOf(found)
@@ -41,7 +25,7 @@ export const CartProvider = ({ children }) => {
           auxArray[productIndex].qty += qty
           setProducto(auxArray)
         }else{
-          setProducto([...producto,item])
+          setProducto([...producto, newProduct]);
         }
   };
 
@@ -54,10 +38,13 @@ export const CartProvider = ({ children }) => {
   const totalPrice = ()=>{
     return producto.reduce((prev,act)=> prev + act.qty * act.price, 0 );
   }
+  const getItemQuantity = () => {
+    return producto.reduce((acumulator,item) => acumulator += item.qty, 0);
+  }
 
 
   return (
-    <CartContext.Provider value={{ producto, addItem, removeItem, clearItems, totalPrice }}>
+    <CartContext.Provider value={{ producto, addItem, removeItem, clearItems, totalPrice, getItemQuantity }}>
       {children}
     </CartContext.Provider>
   );
