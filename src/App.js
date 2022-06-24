@@ -8,11 +8,25 @@ import NavBar from './componentes/NavBar';
 import Cart from './componentes/Cart';
 import { CartProvider } from './componentes/CartContext';
 
+import { initializeApp } from "firebase/app";
 
 
 
 
 function App() {
+  initializeApp ({
+    apiKey: "AIzaSyD_AiMgWuYpchDHeMiPa3o_WGNsXsksdxs",
+    authDomain: "coderhouse-ef71d.firebaseapp.com",
+    databaseURL: "https://coderhouse-ef71d-default-rtdb.firebaseio.com",
+    projectId: "coderhouse-ef71d",
+    storageBucket: "coderhouse-ef71d.appspot.com",
+    messagingSenderId: "535441858158",
+    appId: "1:535441858158:web:305b09901427444a75107f",
+    measurementId: "G-W8RK943LC9"
+  }) ;
+  
+ 
+
 
 
   return (
