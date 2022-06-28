@@ -15,7 +15,7 @@ const Cart = () => {
       phone: "311745713",
       address: "calle 12",
     },
-    productos: producto.map((item) => ({
+    items: producto.map((item) => ({
       id: item.id,
       title: item.title,
       price: item.price,
