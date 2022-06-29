@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 function ItemDetail({ producto }) {
   const [cantidad, setCantidad] = useState(0);
-  const {  image, title, description, price } = producto;
+  const {  image, title, description, price,  stock } = producto;
   const { addItem } = useContext(CartContext);
 
   function onAdd(quantity){
@@ -35,7 +35,7 @@ function ItemDetail({ producto }) {
           
           {cantidad > 0 ? <Link className="btn btn-danger" to={'/cart'}>Terminar mi compra</Link> : <ItemCount
               initial={1}
-              stock={5}
+              stock={stock}
               onAdd={onAdd}
             />
             }
