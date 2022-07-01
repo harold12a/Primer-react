@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/repository-Primer-react/static/css/main.554def84.chunk.css",
+    "main.js": "/repository-Primer-react/static/js/main.37cf950f.chunk.js",
+    "main.js.map": "/repository-Primer-react/static/js/main.37cf950f.chunk.js.map",
+    "runtime-main.js": "/repository-Primer-react/static/js/runtime-main.cdf8d034.js",
+    "runtime-main.js.map": "/repository-Primer-react/static/js/runtime-main.cdf8d034.js.map",
+    "static/css/2.68a81a89.chunk.css": "/repository-Primer-react/static/css/2.68a81a89.chunk.css",
+    "static/js/2.b9c08278.chunk.js": "/repository-Primer-react/static/js/2.b9c08278.chunk.js",
+    "static/js/2.b9c08278.chunk.js.map": "/repository-Primer-react/static/js/2.b9c08278.chunk.js.map",
+    "index.html": "/repository-Primer-react/index.html",
+    "precache-manifest.2e4c4d2f2ed09ca423efa02b4d519b80.js": "/repository-Primer-react/precache-manifest.2e4c4d2f2ed09ca423efa02b4d519b80.js",
+    "service-worker.js": "/repository-Primer-react/service-worker.js",
+    "static/css/2.68a81a89.chunk.css.map": "/repository-Primer-react/static/css/2.68a81a89.chunk.css.map",
+    "static/css/main.554def84.chunk.css.map": "/repository-Primer-react/static/css/main.554def84.chunk.css.map",
+    "static/js/2.b9c08278.chunk.js.LICENSE.txt": "/repository-Primer-react/static/js/2.b9c08278.chunk.js.LICENSE.txt",
+    "static/media/index.css": "/repository-Primer-react/static/media/ola-de-colores.150b4450.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.cdf8d034.js",
+    "static/css/2.68a81a89.chunk.css",
+    "static/js/2.b9c08278.chunk.js",
+    "static/css/main.554def84.chunk.css",
+    "static/js/main.37cf950f.chunk.js"
+  ]
+}
