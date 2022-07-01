@@ -1,5 +1,5 @@
 import React from "react";
-import {  Card } from "react-bootstrap";
+import { Card } from "react-bootstrap";
 import ItemCount from "./ItemCount";
 import { useContext } from "react";
 import { CartContext } from "./CartContext";
@@ -8,17 +8,16 @@ import { Link } from "react-router-dom";
 
 function ItemDetail({ producto }) {
   const [cantidad, setCantidad] = useState(0);
-  const {  image, title, description, price,  stock } = producto;
+  const { image, title, description, price, stock } = producto;
   const { addItem } = useContext(CartContext);
 
-  function onAdd(quantity){
-    addItem(producto, quantity)
+  function onAdd(quantity) {
+    addItem(producto, quantity);
     setCantidad(quantity);
   }
- 
+
   return (
     <>
-      
       <Card className="Card">
         <Card.Img className="cardImg" variant="top" src={image} />
         <Card.Body>
@@ -27,19 +26,15 @@ function ItemDetail({ producto }) {
           <Card.Text className="text">$ {price}</Card.Text>
           <p className="card-text text-secondary">
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas,
-            beatae aliquam dolore porro optio suscipit corrupti nemo laborum ab
-            doloremque officia odio quod nobis, expedita inventore ea eligendi
-            vel harum.
           </p>
 
-          
-          {cantidad > 0 ? <Link className="btn btn-danger" to={'/cart'}>Terminar mi compra</Link> : <ItemCount
-              initial={1}
-              stock={stock}
-              onAdd={onAdd}
-            />
-            }
-          
+          {cantidad > 0 ? (
+            <Link className="btn btn-danger" to={"/cart"}>
+              Terminar mi compra
+            </Link>
+          ) : (
+            <ItemCount initial={1} stock={stock} onAdd={onAdd} />
+          )}
         </Card.Body>
       </Card>
     </>
@@ -47,4 +42,3 @@ function ItemDetail({ producto }) {
 }
 
 export default ItemDetail;
-

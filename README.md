@@ -1,119 +1,53 @@
-# React Base App for Bootcamp 2020 Class 2 Onwards: Learning React
+# TIENDA ONLINE BOUTIQUE AK
 
-We will create a React base app to start learning React
+EN ESTE PROYECTO SER TRABAJO UN E-COMMERCER EN EL CURSO DE REACT.JS DE CODER HOUSE EN UNA DURACION DE 35 DIAS
 
-1. Create React Project using Create React App 
+ La aplicación consiste en un ecommerce en el cual se puede filtrar los productos de acuerdo a categorías, y acceder a ver el detalle de cada producto. Los mismos pueden ser agregados al carrito para luego completar un formulario simulando un proceso de compra completo.
 
-https://create-react-app.dev/docs/getting-started
+Puede visitarse el deploy del proyecto en : https://harold12a.github.io/Primer-react/
 
-https://github.com/facebook/create-react-app
-
-Use the following command:
-
-npx create-react-app react-base-app
+puedes mirar el proyecto en : https://harold12a.github.io/Primer-react/
 
 
-2. Open created directory/project in VS Code
 
 
-3. Give following commands to view app in browser:
+# PUEDE EJECUTAR EL PROYECTO O CLONARLO CON:
 
-cd react-base-app
+git clone https://github.com/harold12a/Primer-react.git
+
+# INSTALAR LAS DEPENDENCIAS:
+
+npm install
+
+# PASOS FIREBASES:
+
+Luego es necesario crear un proyecto en Firebase y crear la coleccion en Firestore items para almacenar las categorías que corresponden a los productos creados y se mostrarán en la NavBar). Los items coleccion deben crearse manualmente desde Firebase.
+
+# ITEMS EN  FIREBASES EJEMPLO:
+
+{
+category: "bolsos"
+
+description: "todos los colores disponibles"
+
+image:"https://i.ibb.co/qsF9WzN/bolso3.jpg"
+
+price:500
+
+stock:20
+
+title: "mini women"
+}
+
+# La colección orders se creará automáticamente al generar la primer orden de compra.
+
+# INICIAR EL SERVIDOR:
 
 npm start
 
+El proyecto estará corriendo en http://localhost:3000 
 
-4. Now we will be adding the project we just created to GitHub using the command line:
+# IMPORTANTE PARA VISUALIZAR EL PROYECTO EN LAS OPTIMAS CONDICIONES DESCARGAR TODAS LAS LIBRERIAS CORRESPONDIENTE AL PROYECTO.
 
-https://help.github.com/en/github/importing-your-projects-to-github/adding-an-existing-project-to-github-using-the-command-line
+react-bootstrap
 
-5. Create GitHub Actions Workflow of deploying a the React App to Surge, there is a bug in the workflow your job is to debug it.
-
-6. When the React App is running locally and remotely on the surge we will start learning React from the following tutorial:
-
-https://daveceddia.com/react-tutorial/
-
-Note: We will start writing React code in App.js and other component files
-
-7. Once you have completed this assignment and everthing is running please report it with your github repo UTL and surge website URL in:
-
-https://github.com/panacloud/Base-React-App/issues
-
-
-
-//********************************************
-
-The Following documentation is auto generated
-
-//********************************************
-
-
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `yarn start`
-
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
-
-### `yarn test`
-
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `yarn build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

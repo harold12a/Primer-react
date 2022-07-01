@@ -23,15 +23,9 @@ const NavBar = () => {
             <Link to="/category/lociones" className="btn btn-outline-primary">
               lociones
             </Link>
-            <Link to="/category/contacto" className="btn btn-outline-primary">
-              contacto
-            
+            <Link to="/cart">
+              <CartWidget />
             </Link>
-            <Link to="/cart" >
-
-            <CartWidget />
-            </Link>
-          
           </div>
         </Nav>
       </div>

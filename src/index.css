@@ -5,9 +5,9 @@ body {
    
 }
 
-/*body{
-   background-image: url(./assets/img/background.jpg);
-}*/
+body{
+   background-image: url(./assets/img/ola-de-colores.jpg);
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -27,27 +27,37 @@ code {
   color: red;
  }
 
- .CardImg {
+ .cardImg {
   width:230px ;
   height:280px ;
   border-radius: 30px;
 } 
 
 
+
 .Card {
-  width: 15rem;
-  height: auto;
-  margin: auto;
+  width: 16rem;
+  height: 33rem;
+  margin: 25px;
   transition: all 400ms ease;
   background: transparent ; 
   border-radius: 20px;
   border-color: aliceblue;
   font-size: .8rem ;
   display: flex;
-  flex-direction: column;    
+  flex-direction: column;  
   justify-content: center;
   
 }
+
+.Card:hover{
+  box-shadow: 5px 5px 20px white;
+  transform: translateY(-3%);
+}
+.CardText{
+  height: 8rem;
+}
+
 
 
 

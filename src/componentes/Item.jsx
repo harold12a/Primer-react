@@ -16,7 +16,7 @@ const Item = ({ producto }) => {
           <div className="button">
             <NavLink to={`/item/${producto.id}`}>
               <Button className="btn btn-dark" variant="primary">
-                ver detalles
+                detalles del producto
               </Button>
             </NavLink>
           </div>
